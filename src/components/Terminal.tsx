@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import profilePhoto from '../assets/profile-photo.jpg';
+import profilePhoto from '../assets/profile-photo.png';
 
 interface TerminalProps {
   onSectionChange: (section: string) => void;
