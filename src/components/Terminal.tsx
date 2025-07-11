@@ -206,7 +206,7 @@ useEffect(() => {
           {/* Terminal Content */}
           <div 
             ref={terminalRef}
-            className="h-[550px] overflow-y-auto p-4 cursor-text"
+            className="h-[500px] w-[900px] overflow-y-auto p-4 cursor-text"
             onClick={handleTerminalClick}
           >
             {/* Command History */}

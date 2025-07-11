@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/mohamed-yassine-abid/"
+              href="www.linkedin.com/in/mohamed-yassine-abid"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://twitter.com/YOUR_HANDLE" // 🔄 Replace with your actual handle
+              href="https://twitter.com/" // 🔄 Replace with your actual handle
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
