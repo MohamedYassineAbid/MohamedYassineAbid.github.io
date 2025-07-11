@@ -198,15 +198,13 @@ useEffect(() => {
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-            <div className="ml-4 text-sm text-muted-foreground font-mono">
-              mohamed-yassine-abid@portfolio:~
-            </div>
+           
           </div>
 
           {/* Terminal Content */}
           <div 
             ref={terminalRef}
-            className="h-[500px] w-[900px] overflow-y-auto p-4 cursor-text"
+            className="h-[480px] w-[1200px] overflow-y-auto p-4 cursor-text"
             onClick={handleTerminalClick}
           >
             {/* Command History */}
