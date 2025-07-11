@@ -150,7 +150,6 @@ I'm seeking an internship to apply my technical skills and grow through real-wor
       await typeCommand('welcome', 50);
       
       await new Promise(resolve => setTimeout(resolve, 2000));
-      await typeCommand('help', 30);
     };
 
     initializeTerminal();
@@ -202,14 +201,14 @@ I'm seeking an internship to apply my technical skills and grow through real-wor
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
             <div className="ml-4 text-sm text-muted-foreground font-mono">
-              mohamed@portfolio:~
+              mohamed-yassine-abid@portfolio:~
             </div>
           </div>
 
           {/* Terminal Content */}
           <div 
             ref={terminalRef}
-            className="h-96 overflow-y-auto p-4 cursor-text"
+            className="h-[550px] overflow-y-auto p-4 cursor-text"
             onClick={handleTerminalClick}
           >
             {/* Command History */}
