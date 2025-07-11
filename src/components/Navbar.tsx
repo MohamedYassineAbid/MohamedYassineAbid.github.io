@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
               <FaGithub />
             </a>
             <a
-              href="www.linkedin.com/in/mohamed-yassine-abid"
+              href="https://www.linkedin.com/in/mohamed-yassine-abid"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
