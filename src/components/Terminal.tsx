@@ -143,18 +143,20 @@ I'm seeking an internship to apply my technical skills and grow through real-wor
     executeCommand(command);
   };
 
-  // Auto-execute welcome and help commands
-  useEffect(() => {
-    const initializeTerminal = async () => {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      await typeCommand('welcome', 50);
-      
-      await new Promise(resolve => setTimeout(resolve, 2000));
-    };
+const hasWelcomed = useRef(false);
 
-    initializeTerminal();
-  }, []);
+useEffect(() => {
+  const initializeTerminal = async () => {
+    if (hasWelcomed.current) return;
+    hasWelcomed.current = true;
 
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    await typeCommand('welcome', 50);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+  };
+
+  initializeTerminal();
+}, []);
   // Auto-scroll to bottom
   useEffect(() => {
     if (terminalRef.current) {
