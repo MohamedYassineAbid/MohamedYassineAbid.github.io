@@ -20,7 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: bun install
-
+      - name: rect
+        run: bun add react-icons
       - name: Build with Vite
         run: bun run build
 
