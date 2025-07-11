@@ -245,7 +245,7 @@ useEffect(() => {
           {/* Quick Commands */}
           <div className="bg-secondary px-4 py-3 border-t border-border">
             <div className="flex flex-wrap gap-2">
-              {Object.keys(commands).filter(cmd => cmd !== 'welcome').slice(0, 6).map((cmd) => (
+              {Object.keys(commands).filter(cmd => cmd !== 'welcome').slice(0, 7).map((cmd) => (
                 <button
                   key={cmd}
                   onClick={() => executeCommand(cmd)}
