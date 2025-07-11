@@ -198,13 +198,15 @@ useEffect(() => {
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-           
+            <div className="ml-4 text-sm text-muted-foreground font-mono">
+              
+            </div>
           </div>
 
           {/* Terminal Content */}
           <div 
             ref={terminalRef}
-            className="h-[480px] w-[900] overflow-y-auto p-4 cursor-text"
+            className="h-[550px] overflow-y-auto p-4 cursor-text"
             onClick={handleTerminalClick}
           >
             {/* Command History */}
@@ -241,22 +243,31 @@ useEffect(() => {
               )}
             </form>
           </div>
+{/* Quick Commands */}
+<div className="bg-secondary px-4 py-3 border-t border-border">
+  <div className="flex flex-wrap gap-2">
+    {Object.keys(commands).filter(cmd => cmd !== 'welcome').slice(0, 7).map((cmd) => (
+      <button
+        key={cmd}
+        onClick={() => executeCommand(cmd)}
+        className="px-3 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary/80 transition-colors"
+        disabled={isTyping}
+      >
+        {cmd}
+      </button>
+    ))}
 
-          {/* Quick Commands */}
-          <div className="bg-secondary px-4 py-3 border-t border-border">
-            <div className="flex flex-wrap gap-2">
-              {Object.keys(commands).filter(cmd => cmd !== 'welcome').slice(0, 7).map((cmd) => (
-                <button
-                  key={cmd}
-                  onClick={() => executeCommand(cmd)}
-                  className="px-3 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary/80 transition-colors"
-                  disabled={isTyping}
-                >
-                  {cmd}
-                </button>
-              ))}
-            </div>
-          </div>
+    {/* Custom additional command */}
+    <button
+      onClick={() => executeCommand('contact')}
+      className="px-3 py-1 text-xs bg-primary text-primary-foreground rounded hover:bg-primary/80 transition-colors"
+      disabled={isTyping}
+    >
+      contact
+    </button>
+  </div>
+</div>
+
         </div>
 
         {/* Footer */}
