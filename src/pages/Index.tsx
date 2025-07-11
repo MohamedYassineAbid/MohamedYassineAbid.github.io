@@ -1,12 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React, { useState } from 'react';
+import Navbar from '../components/Navbar';
+import Terminal from '../components/Terminal';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('welcome');
+
+  const handleNavigate = (section: string) => {
+    setActiveSection(section);
+    
+    // Simulate typing the command in terminal
+    const terminalInput = document.querySelector('input[type="text"]') as HTMLInputElement;
+    if (terminalInput) {
+      terminalInput.value = section;
+      terminalInput.focus();
+      
+      // Trigger the command
+      const form = terminalInput.closest('form');
+      if (form) {
+        const event = new Event('submit', { bubbles: true, cancelable: true });
+        form.dispatchEvent(event);
+      }
+    }
+  };
+
+  const handleSectionChange = (section: string) => {
+    setActiveSection(section);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar 
+        activeSection={activeSection} 
+        onNavigate={handleNavigate}
+      />
+      <Terminal 
+        onSectionChange={handleSectionChange}
+      />
     </div>
   );
 };

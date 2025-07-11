@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Terminal-themed design system for Mohamed Yassine Abid's portfolio
+All colors MUST be HSL for proper theming.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Terminal theme colors */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    /* Terminal green accent */
+    --terminal-green: 120 100% 50%;
+    --terminal-green-dim: 120 100% 35%;
+    --terminal-green-bright: 120 100% 65%;
+    
+    /* Terminal cyan for highlights */
+    --terminal-cyan: 180 100% 50%;
+    --terminal-cyan-dim: 180 100% 35%;
+    
+    /* Terminal amber for warnings/special text */
+    --terminal-amber: 45 100% 50%;
+    
+    /* Card and surface colors */
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    
+    --navbar: 0 0% 0% / 0.9;
+    --navbar-border: 120 100% 50% / 0.2;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Primary uses terminal green */
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Secondary uses dim terminal colors */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Muted colors for less important text */
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent uses terminal cyan */
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Terminal-appropriate borders */
+    --border: 120 100% 50% / 0.3;
+    --input: 0 0% 20%;
+    --ring: 120 100% 50%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,93 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
   }
+}
+
+/* Terminal-specific custom styles */
+@layer components {
+  .terminal-text {
+    @apply font-mono text-foreground;
+  }
+  
+  .terminal-green {
+    color: hsl(var(--terminal-green));
+  }
+  
+  .terminal-cyan {
+    color: hsl(var(--terminal-cyan));
+  }
+  
+  .terminal-amber {
+    color: hsl(var(--terminal-amber));
+  }
+  
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid hsl(var(--terminal-green));
+    animation: typewriter 2s steps(40, end), blink-cursor 1s infinite;
+  }
+  
+  .profile-photo {
+    @apply w-32 h-32 rounded-full border-4 border-primary grayscale transition-all duration-500 hover:grayscale-0;
+    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.3);
+  }
+  
+  .status-dot {
+    @apply w-4 h-4 bg-primary rounded-full absolute -top-1 -right-1;
+    animation: pulse-green 2s infinite;
+  }
+  
+  .terminal-prompt::before {
+    content: "mohamed@portfolio:~$ ";
+    color: hsl(var(--terminal-green));
+    font-weight: bold;
+  }
+  
+  .navbar-link {
+    @apply relative transition-colors duration-300 hover:text-primary;
+  }
+  
+  .navbar-link.active {
+    @apply text-primary;
+  }
+  
+  .navbar-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .navbar-link:hover::after,
+  .navbar-link.active::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Keyframe animations */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-cursor {
+  from, to { border-color: transparent; }
+  50% { border-color: hsl(var(--terminal-green)); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
 }
