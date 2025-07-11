@@ -100,10 +100,7 @@ I'm seeking an internship to apply my technical skills and grow through real-wor
     const timestamp = new Date().toLocaleTimeString();
     setHistory(prev => [...prev, { command, output, timestamp }]);
     
-    // Update active section for navbar
-    if (Object.keys(commands).includes(command)) {
-      onSectionChange(command);
-    }
+   
   };
 
   const executeCommand = (cmd: string) => {
@@ -152,7 +149,6 @@ useEffect(() => {
 
     await new Promise(resolve => setTimeout(resolve, 1000));
     await typeCommand('welcome', 50);
-    await new Promise(resolve => setTimeout(resolve, 2000));
   };
 
   initializeTerminal();
