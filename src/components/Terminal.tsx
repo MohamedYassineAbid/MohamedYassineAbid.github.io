@@ -265,7 +265,7 @@ I'm seeking an internship to apply my technical skills and grow through real-wor
 
         {/* Footer */}
         <div className="text-center mt-8 text-sm text-muted-foreground">
-          <p>© 2025 Mohamed Yassine Abid. Built with React & TypeScript.</p>
+          <p>© 2025 Mohamed Yassine Abid.</p>
           <p className="mt-1">
             <span className="terminal-green">●</span> Available for Internship Opportunities
           </p>
