@@ -145,19 +145,19 @@ async function loadPortfolio() {
   const grid = document.getElementById('projectsGrid');
   grid.innerHTML = Array(6).fill('<div class="skeleton"></div>').join('');
 
-  // ── 1. hidden.json (overrides fallback array if present) ──
+  // ── 1. hidden.json ──
   try {
-    const hRes = await fetch('projects/hidden.json');
+    const hRes = await fetch(`projects/hidden.json?v=${Date.now()}`);
     if (hRes.ok) {
       const { hiddenRepos = [] } = await hRes.json();
       hiddenRepos.forEach(r => { if (!HIDDEN_REPOS.includes(r)) HIDDEN_REPOS.push(r); });
     }
   } catch (_) {}
 
-  // ── 2. projects.json — THE source of truth for custom projects ──
+  // ── 2. projects.json — source of truth for custom projects ──
   let customProjects = [];
   try {
-    const cRes = await fetch('projects/projects.json');
+    const cRes = await fetch(`projects/projects.json?v=${Date.now()}`);
     if (cRes.ok) customProjects = await cRes.json();
   } catch (_) {}
 
