@@ -1,0 +1,18 @@
+[
+  {
+    "title": "SignBridge – Sign Language AI Platform",
+    "description": "AI-driven platform enabling two-way translation between Tunisian Dialect and Tunisian Sign Language. Combines speech recognition, text-to-speech, and BiLSTM-based gesture modeling. Uses MediaPipe for real-time hand and pose landmark extraction.",
+    "category": ["ai"],
+    "tags": ["BiLSTM", "MediaPipe", "NLP", "TTS", "Computer Vision", "Python"],
+    "award": "🥈 2nd Place — MasterFaster 3",
+    "github": "https://github.com/MohamedYassineAbid/Sign-Bridge"
+  },
+  {
+    "title": "JobKai – AI Employment Platform",
+    "description": "AI-powered job platform for MENA and Sub-Saharan Africa with resume analysis, interview simulations, and semantic job matching. Microservices architecture with React/TypeScript and FastAPI. Deployed on AKS with CI/CD pipeline including Trivy scanning and SonarQube analysis.",
+    "category": ["ai", "devops"],
+    "tags": ["FastAPI", "React", "TypeScript", "AKS", "Trivy", "SonarQube", "CI/CD"],
+    "award": "🥉 3rd Place — TSYP13 CS&CN Challenge",
+    "github": "https://github.com/jobkaiteam-code/JobKai"
+  }
+]
