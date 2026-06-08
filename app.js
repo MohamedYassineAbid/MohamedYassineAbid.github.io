@@ -262,7 +262,68 @@ async function loadGitHubStats() {
 }
 
 /* ============================================================
+   BLOG — fetch Medium posts via RSS2JSON
+   ============================================================ */
+async function loadBlog() {
+  const grid = document.getElementById('blogGrid');
+  const MEDIUM_USER = 'abidmohamedyassine00';
+  const RSS_URL     = `https://medium.com/feed/@${MEDIUM_USER}`;
+  const API_URL     = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=6`;
+
+  try {
+    const res  = await fetch(API_URL);
+    const data = await res.json();
+
+    if (data.status !== 'ok' || !data.items?.length) {
+      throw new Error('no posts');
+    }
+
+    grid.innerHTML = data.items.map(post => {
+      // extract first image from content, fallback to feed image
+      const imgMatch = post.content?.match(/<img[^>]+src="([^"]+)"/);
+      const img      = imgMatch ? imgMatch[1] : (data.feed?.image || '');
+
+      // strip HTML for excerpt
+      const excerpt  = post.description
+        ?.replace(/<[^>]+>/g, '')
+        ?.trim()
+        ?.slice(0, 160) + '…';
+
+      const date = new Date(post.pubDate).toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'short', year: 'numeric'
+      });
+
+      const tags = (post.categories || []).slice(0, 3)
+        .map(t => `<span class="tag">${t}</span>`).join('');
+
+      return `
+        <a href="${post.link}" target="_blank" class="blog-card">
+          ${img ? `<div class="blog-thumb" style="background-image:url('${img}')"></div>` : '<div class="blog-thumb blog-thumb-empty"></div>'}
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-date">${date}</span>
+              ${post.author ? `<span class="blog-author">· ${post.author}</span>` : ''}
+            </div>
+            <h3 class="blog-title">${post.title}</h3>
+            <p class="blog-excerpt">${excerpt}</p>
+            ${tags ? `<div class="tags" style="margin-top:auto;padding-top:12px">${tags}</div>` : ''}
+          </div>
+        </a>`;
+    }).join('');
+
+  } catch (_) {
+    grid.innerHTML = `
+      <div style="font-family:var(--font-mono);font-size:.85rem;color:var(--text-muted);padding:20px 0">
+        Could not load posts automatically. &nbsp;
+        <a href="https://medium.com/@${MEDIUM_USER}" target="_blank"
+           style="color:var(--accent)">Read on Medium ↗</a>
+      </div>`;
+  }
+}
+
+/* ============================================================
    INIT
    ============================================================ */
 loadGitHubStats();
 loadPortfolio();
+loadBlog();
