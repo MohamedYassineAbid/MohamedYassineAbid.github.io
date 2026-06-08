@@ -14,7 +14,7 @@
     "tags": ["FastAPI", "React", "TypeScript", "AKS", "Trivy", "SonarQube", "CI/CD"],
     "award": "🥉 3rd Place — TSYP13 CS&CN Challenge",
     "github": "https://github.com/jobkaiteam-code/JobKai"
-  }
+  },
   {
     "title": "Private Data Science Platform",
     "description": "Deployed a self-hosted multi-user JupyterHub platform on a Kubernetes cluster (Proxmox/Terraform). Full lifecycle automated with Ansible and Helm for reproducible, scalable research infrastructure.",
