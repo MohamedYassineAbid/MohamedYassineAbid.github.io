@@ -10,6 +10,8 @@
     "signbridge",
     "nlpfss",
     "DEEP",
-    "sport"
+    "sport",
+    "I2I",
+    "TRC2"
   ]
 }
