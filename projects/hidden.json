@@ -12,6 +12,12 @@
     "DEEP",
     "sport",
     "I2I",
-    "TRC2"
+    "TRC2",
+    "tester",
+    "olive-hack"
+  ],
+  "extraRepos": [
+    "lambda-cast/LambdaCast-dev",
+    "lambda-cast/Lamba-Cast-Agent"
   ]
 }

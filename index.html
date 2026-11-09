@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Yassine Abid — Portfolio</title>
+  <title>Mohamed Yassine Abid · DevOps, Cloud and AI</title>
+  <meta name="description" content="Mohamed Yassine Abid, DevOps, Cloud and AI engineering student in Sfax, Tunisia. Projects, experience and contact." />
+  <meta name="theme-color" content="#f2f5f2" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0d14'/%3E%3Ctext x='5' y='22' font-family='monospace' font-size='16' font-weight='600' fill='%235bd49a'%3E$_%3C/text%3E%3C/svg%3E" />
+  <script>
+    try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light'); }
+    catch (_) { document.documentElement.setAttribute('data-theme', 'light'); }
+  </script>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -14,8 +22,15 @@
   <nav id="navbar">
     <div class="nav-inner">
       <span class="nav-logo">Lead<span class="dot">.</span></span>
-      <button class="theme-toggle" id="themeToggle" title="Toggle theme">◐</button>
-      <ul class="nav-links">
+      <span class="nav-avail" aria-label="Available for an internship. Local time in Sfax">
+        <span class="status-dot" aria-hidden="true"></span>available
+        <time class="tz-clock" data-clock>--:--:--</time>
+      </span>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle light and dark theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+      <button class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -29,50 +44,62 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-content">
-      <div class="hero-badge">SYS:// INIT — SFAX, TUNISIA</div>
-      <img class="hero-avatar" src="https://avatars.githubusercontent.com/u/117313298?v=4" alt="Mohamed Yassine Abid" />
-      <h1>Mohamed Yassine<br /><span class="accent">Abid</span></h1>
-      <p class="hero-tagline">DevOps · Cloud · AI Engineering</p>
-      <p class="hero-sub">
-        Engineering student passionate about DevOps, networking, data and AI —
-        building production-grade pipelines from IaC to intelligent systems.
-      </p>
-      <div class="hero-links">
-        <a href="https://github.com/MohamedYassineAbid" target="_blank" class="hero-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.12.82-.26.82-.57v-2c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="mailto:abidmohamedyassine00@gmail.com" class="hero-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          Email
-        </a>
-        <button class="hero-link terminal-toggle-btn" id="terminalToggle">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:1rem">$_</span>
-          Terminal
-        </button>
-        <a href="https://www.linkedin.com/in/mohamed-yassine-abid/" target="_blank" class="hero-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-          LinkedIn
-        </a>
-         <a href="https://medium.com/@abidmohamedyassine00" target="_blank" class="hero-link hero-link-medium">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-          Meduim
-        </a>
-        
-       
+    <canvas class="sky" id="sky" aria-hidden="true"></canvas>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Mohamed Yassine Abid</h1>
+        <p class="hero-sub">
+          DevOps, cloud and AI engineering student in Sfax. I build production-grade
+          pipelines, from infrastructure as code to the intelligent systems running on top.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See projects</a>
+          <button type="button" class="btn btn-secondary terminal-toggle-btn" id="terminalToggle">
+            Open terminal <kbd>T</kbd>
+          </button>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>status</dt><dd><span class="status-dot" aria-hidden="true"></span>open to internship</dd></div>
+          <div><dt>based</dt><dd>Sfax, Tunisia</dd></div>
+          <div><dt>studying</dt><dd>Data Engineering</dd></div>
+          <div><dt>local</dt><dd><time data-clock>--:--:--</time></dd></div>
+        </dl>
+        <ul class="hero-social">
+          <li><a href="https://github.com/MohamedYassineAbid" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.12.82-.26.82-.57v-2c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/mohamed-yassine-abid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>LinkedIn</a></li>
+          <li><a href="https://medium.com/@abidmohamedyassine00" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>Medium</a></li>
+          <li><a href="mailto:abidmohamedyassine00@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a></li>
+        </ul>
       </div>
+
+      <figure class="gitgraph" aria-label="How I ship: branch, add infrastructure code, pass checks, merge, deploy">
+        <svg viewBox="0 0 360 400" role="img" aria-hidden="true">
+          <path class="gg-main" pathLength="1" d="M120 20 V380" />
+          <path class="gg-branch" pathLength="1" d="M120 80 C120 130 240 110 240 160 V250 C240 300 120 280 120 330" />
+          <circle class="gg-ring" cx="120" cy="379" r="7" />
+          <circle class="gg-pulse" r="5" />
+          <g class="gg-node" style="--i:0;--t:0s"><circle cx="120" cy="20" r="7"/><text x="100" y="24" text-anchor="end">main</text></g>
+          <g class="gg-node" style="--i:1;--t:0.58s"><circle cx="120" cy="80" r="7"/><text x="100" y="84" text-anchor="end">checkout -b feat/k8s</text></g>
+          <g class="gg-node" style="--i:2;--t:2.02s"><circle cx="240" cy="160" r="7"/><text x="258" y="164">+ main.tf</text></g>
+          <g class="gg-node" style="--i:3;--t:2.5s"><circle cx="240" cy="210" r="7"/><text x="258" y="214">+ values.yaml</text></g>
+          <g class="gg-node gg-ok" style="--i:4;--t:2.89s"><circle cx="240" cy="250" r="7"/><text x="258" y="254">trivy · sonar passed</text></g>
+          <g class="gg-node" style="--i:5;--t:4.33s"><circle cx="120" cy="330" r="7"/><text x="100" y="334" text-anchor="end">merge → main</text></g>
+          <g class="gg-node gg-tag" style="--i:6;--t:4.8s"><rect x="138" y="364" width="150" height="30" rx="15"/><circle cx="120" cy="379" r="7"/><text x="213" y="384" text-anchor="middle">argocd · deployed</text></g>
+        </svg>
+      </figure>
     </div>
-    <div class="scroll-hint">scroll ↓</div>
+    <div class="marquee" role="region" aria-label="Tools I work with">
+      <ul class="marquee__track"><li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>Ansible</li><li>Helm</li><li>ArgoCD</li><li>Jenkins</li><li>SonarQube</li><li>Trivy</li><li>Prometheus</li><li>Grafana</li><li>Azure AKS</li><li>Proxmox</li><li>Linux</li><li>Python</li><li>FastAPI</li><li>Computer Vision</li><li>NLP</li><li>Spark</li><li>MediaPipe</li><li>LoRaWAN</li><li>React</li></ul>
+      <ul class="marquee__track" aria-hidden="true"><li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>Ansible</li><li>Helm</li><li>ArgoCD</li><li>Jenkins</li><li>SonarQube</li><li>Trivy</li><li>Prometheus</li><li>Grafana</li><li>Azure AKS</li><li>Proxmox</li><li>Linux</li><li>Python</li><li>FastAPI</li><li>Computer Vision</li><li>NLP</li><li>Spark</li><li>MediaPipe</li><li>LoRaWAN</li><li>React</li></ul>
+    </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="section-label">SYS:// ABOUT PROFILE</div>
     <div class="container two-col">
       <div class="about-text">
-        <h2>About Me</h2>
+        <p class="sec-label"><span>01</span> whoami</p>
+        <h2>About</h2>
         <p>
           I'm an engineering student at the <strong>Faculty of Sciences, University of Sfax</strong>,
           currently pursuing a Data Engineering cycle. I'm passionate about <strong>DevOps</strong>,
@@ -80,7 +107,7 @@
         </p>
         <p>
           I design end-to-end DevSecOps pipelines, deploy Kubernetes clusters using IaC, and build
-          AI-powered platforms — from sign language recognition to intelligent job-matching engines.
+          AI platforms, from sign language recognition to intelligent job-matching engines.
           I believe great infrastructure is invisible, and great AI is useful.
         </p>
         <p>
@@ -88,33 +115,37 @@
           <strong>Competitive Programming Club</strong> at Faculty of Sciences of Sfax.
           Currently seeking an internship to apply my skills on real-world challenges.
         </p>
-        <div class="about-stats">
-          <div class="stat"><span class="stat-num" id="statRepos">–</span><span class="stat-label">GitHub Repos</span></div>
-          <div class="stat"><span class="stat-num" id="statFollowers">–</span><span class="stat-label">Followers</span></div>
-          <div class="stat"><span class="stat-num" id="statSince">–</span><span class="stat-label">On GitHub since</span></div>
-        </div>
+        <p class="about-stats">
+          <span><b id="statRepos">–</b> public repos</span>
+          <span><b id="statFollowers">–</b> followers</span>
+          <span>on GitHub since <b id="statSince">–</b></span>
+        </p>
       </div>
-      <div class="about-card">
-        <div class="card-line"><span class="hl">Name</span>Mohamed Yassine Abid</div>
-        <div class="card-line"><span class="hl">Location</span>Sfax, Tunisia</div>
-        <div class="card-line"><span class="hl">Email</span>abidmohamedyassine00@gmail.com</div>
-        <div class="card-line"><span class="hl">Phone</span>+216 28 592 003</div>
-        <div class="card-line"><span class="hl">GitHub</span>abidology</div>
-        <div class="card-line"><span class="hl">LinkedIn</span>mohamed-yassine-abid</div>
-        <div class="card-line"><span class="hl">Status</span><span class="badge-open">Open to Internship</span></div>
+      <div class="about-card id-card">
+        <div class="id-head"><span>identity.card</span><span>id/mya</span></div>
+        <img class="id-photo" src="assets/profile.jpg" alt="Mohamed Yassine Abid" width="720" height="960" loading="lazy" />
+        <div class="id-rows">
+          <div class="card-line"><span class="hl">name</span><span>Mohamed Yassine Abid</span></div>
+          <div class="card-line"><span class="hl">base</span><span>Sfax, Tunisia</span></div>
+          <div class="card-line"><span class="hl">email</span><span>abidmohamedyassine00@gmail.com</span></div>
+          <div class="card-line"><span class="hl">phone</span><span>+216 28 592 003</span></div>
+          <div class="card-line"><span class="hl">github</span><span>abidology</span></div>
+          <div class="card-line"><span class="hl">linkedin</span><span>mohamed-yassine-abid</span></div>
+          <div class="card-line"><span class="hl">status</span><span class="badge-open"><span class="status-dot" aria-hidden="true"></span>open to internship</span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="section-label">SYS:// TECH STACK</div>
     <div class="container">
-      <h2>Technical Skills</h2>
+      <p class="sec-label"><span>02</span> ls ~/skills</p>
+      <h2>Skills</h2>
       <div class="skills-grid">
 
         <div class="skill-group">
-          <h3>☁️ DevOps &amp; IaC</h3>
+          <h3>DevOps &amp; IaC</h3>
           <div class="tags">
             <span class="tag">Docker</span>
             <span class="tag">Kubernetes</span>
@@ -130,7 +161,7 @@
         </div>
 
         <div class="skill-group">
-          <h3>🌐 Cloud &amp; Monitoring</h3>
+          <h3>Cloud &amp; Monitoring</h3>
           <div class="tags">
             <span class="tag">Azure (AKS)</span>
             <span class="tag">Cloudstack</span>
@@ -143,7 +174,7 @@
         </div>
 
         <div class="skill-group">
-          <h3>🤖 AI &amp; Data</h3>
+          <h3>AI &amp; Data</h3>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">NLP</span>
@@ -159,7 +190,7 @@
         </div>
 
         <div class="skill-group">
-          <h3>� Languages &amp; Tools</h3>
+          <h3>Languages &amp; Tools</h3>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">C/C++</span>
@@ -180,31 +211,54 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-label">SYS:// PROJECTS</div>
     <div class="container">
+      <p class="sec-label"><span>03</span> ls ~/projects</p>
       <div class="projects-header">
         <h2>Projects</h2>
         <div class="project-tabs">
-          <button class="tab active" data-filter="all">All</button>
-          <button class="tab" data-filter="ai">AI / ML</button>
-          <button class="tab" data-filter="devops">DevOps</button>
-          <button class="tab" data-filter="web">Web</button>
-          <button class="tab" data-filter="custom">Other</button>
+          <button class="tab active" data-filter="all" aria-pressed="true">All</button>
+          <button class="tab" data-filter="ai" aria-pressed="false">AI / ML</button>
+          <button class="tab" data-filter="devops" aria-pressed="false">DevOps</button>
+          <button class="tab" data-filter="web" aria-pressed="false">Web</button>
+          <button class="tab" data-filter="custom" aria-pressed="false">Other</button>
         </div>
       </div>
 
       <!-- GitHub + custom projects rendered here -->
       <div class="projects-grid" id="projectsGrid"></div>
+      <div class="projects-more-row">
+        <button type="button" class="btn btn-secondary projects-more" id="projectsMore" aria-controls="projectsGrid" aria-expanded="false" hidden>Show more</button>
+      </div>
 
     </div>
   </section>
 
   <!-- EXPERIENCE & EDUCATION -->
   <section id="experience">
-    <div class="section-label">SYS:// EXPERIENCE &amp; EDUCATION</div>
     <div class="container">
-      <h2>Experience &amp; Education</h2>
+      <p class="sec-label"><span>04</span> git log --career</p>
+      <h2>Experience and education</h2>
       <div class="timeline">
+
+        <!-- INTERNSHIP 2026 -->
+        <div class="timeline-item">
+          <div class="timeline-dot accent"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="timeline-date">2026</span>
+              <span class="timeline-badge experience">Internship</span>
+            </div>
+            <div class="timeline-body">
+            <h3>KubeOlive: Enterprise MLOps Platform</h3>
+            <p class="timeline-org">OliveSoft</p>
+            <p>Built a self-hosted Charmed Kubeflow platform on Proxmox VE from scratch, automated from bare metal up. Terraform provisions the VMs and Ansible turns them into a 3-node MicroK8s cluster. Kubeflow is deployed with Juju, with Pipelines, Elyra visual pipelines, Katib, MLflow and KServe.</p>
+            <p>Multi-tenancy through GitLab and Dex single sign-on, with an isolated namespace, dedicated MinIO storage and credentials for every user. A custom FastAPI admin portal provisions users and applies resource quota groups, and scripted recovery brings the cluster back after power cuts.</p>
+            <div class="tl-tags">
+              <span class="tag">Kubeflow</span><span class="tag">MicroK8s</span><span class="tag">Juju</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Proxmox</span><span class="tag">MLflow</span><span class="tag">KServe</span><span class="tag">Katib</span><span class="tag">Dex SSO</span><span class="tag">MinIO</span><span class="tag">FastAPI</span>
+            </div>
+            </div>
+          </div>
+        </div>
 
         <!-- INTERNSHIP 1 -->
         <div class="timeline-item">
@@ -214,11 +268,13 @@
               <span class="timeline-date">2025</span>
               <span class="timeline-badge experience">Internship</span>
             </div>
+            <div class="timeline-body">
             <h3>Private Data Science Platform</h3>
-            <p class="timeline-org">Data Engineering &amp; Semantics Research Unit — University of Sfax</p>
+            <p class="timeline-org">Data Engineering &amp; Semantics Research Unit, University of Sfax</p>
             <p>Deployed a self-hosted multi-user JupyterHub platform on a Kubernetes cluster (Proxmox/Terraform). Full lifecycle automated with Ansible and Helm for reproducible, scalable research infrastructure.</p>
             <div class="tl-tags">
               <span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Helm</span><span class="tag">Proxmox</span><span class="tag">JupyterHub</span>
+            </div>
             </div>
           </div>
         </div>
@@ -231,11 +287,13 @@
               <span class="timeline-date">2024</span>
               <span class="timeline-badge experience">Internship</span>
             </div>
+            <div class="timeline-body">
             <h3>DevSecOps Engineering Intern</h3>
             <p class="timeline-org">SIFAST, Sfax</p>
             <p>Designed and implemented a fully automated end-to-end DevSecOps pipeline integrating IaC (Terraform, Ansible), CI/CD (Jenkins, SonarQube, Trivy), artifact management (Nexus), and GitOps deployment (ArgoCD, Helm, K8s). Monitored production with Prometheus and Grafana, routing critical alerts to Slack.</p>
             <div class="tl-tags">
               <span class="tag">Jenkins</span><span class="tag">ArgoCD</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">SonarQube</span><span class="tag">Trivy</span><span class="tag">Prometheus</span><span class="tag">Grafana</span>
+            </div>
             </div>
           </div>
         </div>
@@ -248,11 +306,13 @@
               <span class="timeline-date">2024</span>
               <span class="timeline-badge experience">Internship</span>
             </div>
+            <div class="timeline-body">
             <h3>IoT &amp; Infrastructure Intern</h3>
             <p class="timeline-org">Wedtect</p>
             <p>Designed an end-to-end IoT data pipeline for LoRaWAN device monitoring using ChirpStack on Raspberry Pi, ingesting unstructured sensor data into MongoDB for real-time analysis.</p>
             <div class="tl-tags">
               <span class="tag">LoRaWAN</span><span class="tag">ChirpStack</span><span class="tag">Raspberry Pi</span><span class="tag">MongoDB</span>
+            </div>
             </div>
           </div>
         </div>
@@ -262,12 +322,14 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-meta">
-              <span class="timeline-date">Sep 2024 — Jun 2027</span>
+              <span class="timeline-date">Sep 2024 – Jun 2027</span>
               <span class="timeline-badge">Education</span>
             </div>
+            <div class="timeline-body">
             <h3>Data Engineering Cycle</h3>
             <p class="timeline-org">Faculty of Sciences, University of Sfax, Tunisia</p>
             <p>Engineering curriculum focused on Big Data, Cloud Infrastructure, AI systems, and distributed computing. Active in research and competition projects throughout the program.</p>
+            </div>
           </div>
         </div>
 
@@ -276,12 +338,14 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-meta">
-              <span class="timeline-date">Sep 2022 — Jun 2024</span>
+              <span class="timeline-date">Sep 2022 – Jun 2024</span>
               <span class="timeline-badge">Education</span>
             </div>
+            <div class="timeline-body">
             <h3>Integrated Preparatory Cycle in Computer Science</h3>
             <p class="timeline-org">Faculty of Sciences, University of Sfax, Tunisia</p>
-            <p>Intensive preparatory cycle covering mathematics, algorithms, data structures, and computer science fundamentals — foundation for competitive engineering programs.</p>
+            <p>Intensive preparatory cycle covering mathematics, algorithms, data structures, and computer science fundamentals, the foundation for competitive engineering programs.</p>
+            </div>
           </div>
         </div>
 
@@ -291,92 +355,73 @@
 
   <!-- CERTIFICATIONS -->
   <section id="certifications">
-    <div class="section-label">SYS:// CERTIFICATIONS &amp; LEADERSHIP</div>
     <div class="container">
+      <p class="sec-label"><span>05</span> ls -la credentials/</p>
       <h2>Certifications</h2>
-      <div class="certs-grid">
+      <ul class="certs-table">
+          <li class="cert-row">
+            <span class="cert-issuer">Coursera</span>
+            <span class="cert-name">Certified Kubernetes Administrator (CKA)</span>
+            <span class="cert-meta"></span>
+          </li>
+          <li class="cert-row">
+            <span class="cert-issuer">Microsoft</span>
+            <span class="cert-name">Azure AI Fundamentals</span>
+            <span class="cert-meta"></span>
+          </li>
+          <li class="cert-row">
+            <span class="cert-issuer">Microsoft</span>
+            <span class="cert-name">Microsoft Office Specialist Associate</span>
+            <span class="cert-meta">Office 2019</span>
+          </li>
+          <li class="cert-row">
+            <span class="cert-issuer">Udemy</span>
+            <span class="cert-name">Object-Oriented Programming in Java</span>
+            <span class="cert-meta"></span>
+          </li>
+          <li class="cert-row">
+            <span class="cert-issuer">EF SET</span>
+            <span class="cert-name">EF SET Certificate C1 (English)</span>
+            <span class="cert-meta">EF Standard English Test</span>
+          </li>
+        </ul>
 
-        <div class="cert-card">
-          <span class="cert-icon">☸</span>
-          <div>
-            <h4>Certified Kubernetes Administrator (CKA)</h4>
-            <p>Coursera</p>
+      <h2 class="h2-sub">Leadership and activities</h2>
+      <ul class="lead-board">
+        <li class="lead-card" style="--tilt:-3deg">
+          <div class="lc-photo lc-photo--light">
+            <img src="assets/leadership/ieee-cs.png" alt="IEEE Computer Society logo" loading="lazy" />
           </div>
-        </div>
+          <h3>Chairman</h3>
+          <p class="lc-org">IEEE FSS Computer Society Chapter</p>
+          <p class="lc-date">Jan 2025 – Jan 2026</p>
+          <p class="lc-desc">Organized events, workshops, and competitions to engage members and foster professional growth within the IEEE student community at Faculty of Sciences of Sfax.</p>
+        </li>
 
-        <div class="cert-card">
-          <span class="cert-icon">☁</span>
-          <div>
-            <h4>Azure AI Fundamentals</h4>
-            <p>Microsoft</p>
+        <li class="lead-card" style="--tilt:2.5deg">
+          <div class="lc-photo lc-photo--dark">
+            <img src="assets/leadership/cpc-fss.png" alt="Competitive Programming Club FSS logo" loading="lazy" />
           </div>
-        </div>
+          <h3>Lead &amp; Founder</h3>
+          <p class="lc-org">Competitive Programming Club, FSS</p>
+          <p class="lc-date">Sep 2023 – Sep 2024</p>
+          <p class="lc-desc">Founded and led the club with a core team, growing membership to 100+ students. Improved average problem-solving scores by 25% through structured training programs.</p>
+        </li>
 
-        <div class="cert-card">
-          <span class="cert-icon">🏅</span>
-          <div>
-            <h4>Microsoft Office Specialist Associate</h4>
-            <p>Microsoft · Office 2019</p>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <span class="cert-icon">☕</span>
-          <div>
-            <h4>Object-Oriented Programming in Java</h4>
-            <p>Udemy</p>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <span class="cert-icon">🇬🇧</span>
-          <div>
-            <h4>EF SET Certificate C1 (English)</h4>
-            <p>EF Standard English Test</p>
-          </div>
-        </div>
-
-      </div>
-
-      <h2 style="margin-top:56px">Leadership &amp; Activities</h2>
-      <div class="leadership-grid">
-
-        <div class="leadership-card">
-          <div class="lc-header">
-            <span class="lc-icon">⚡</span>
-            <div>
-              <h4>Chairman, IEEE FSS Computer Society Chapter</h4>
-              <span class="lc-date">Jan 2025 — Jan 2026 · IEEE</span>
-            </div>
-          </div>
-          <p>Organized events, workshops, and competitions to engage members and foster professional growth within the IEEE student community at Faculty of Sciences of Sfax.</p>
-        </div>
-
-        <div class="leadership-card">
-          <div class="lc-header">
-            <span class="lc-icon">🏆</span>
-            <div>
-              <h4>Lead &amp; Founder, Competitive Programming Club</h4>
-              <span class="lc-date">Sep 2023 — Sep 2024 · Faculty of Sciences of Sfax</span>
-            </div>
-          </div>
-          <p>Founded and led the club with a core team, growing membership to 100+ students. Improved average problem-solving scores by 25% through structured training programs.</p>
-        </div>
-
-      </div>
+      </ul>
 
       <div class="languages-row">
         <h3>Languages</h3>
         <div class="lang-chips">
-          <span class="lang-chip"><span class="lang-flag">🇹🇳</span>Arabic <span class="lang-level">Native</span></span>
-          <span class="lang-chip"><span class="lang-flag">🇬🇧</span>English <span class="lang-level">C1 — Fluent</span></span>
-          <span class="lang-chip"><span class="lang-flag">🇫🇷</span>French <span class="lang-level">Proficient</span></span>
+          <span class="lang-chip">Arabic <span class="lang-level">Native</span></span>
+          <span class="lang-chip">English <span class="lang-level">C1, fluent</span></span>
+          <span class="lang-chip">French <span class="lang-level">Proficient</span></span>
         </div>
         <div class="hobbies-row">
-          <span class="hobby">⚽ Sport</span>
-          <span class="hobby">♟ Chess</span>
-          <span class="hobby">📚 Reading</span>
-          <span class="hobby">🎵 Classical Music</span>
+          <span class="hobby">Sport</span>
+          <span class="hobby">Chess</span>
+          <span class="hobby">Reading</span>
+          <span class="hobby">Classical Music</span>
         </div>
       </div>
 
@@ -384,39 +429,39 @@
   </section>
   <!-- CONTACT -->
   <section id="contact">
-    <div class="section-label">SYS:// CONTACT</div>
     <div class="container contact-grid">
       <div class="contact-info">
-        <h2>Get In Touch</h2>
+        <p class="sec-label"><span>06</span> mail --to mya</p>
+        <h2>Contact</h2>
         <p>
           Open to internship opportunities, DevOps/AI collaborations,
-          or just a good conversation about tech. Feel free to reach out!
+          or a good conversation about infrastructure and AI. Email is the fastest way to reach me.
         </p>
         <div class="contact-items">
           <a href="mailto:abidmohamedyassine00@gmail.com" class="contact-item">
-            <span class="ci-icon">✉</span>
+            <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
             <span>abidmohamedyassine00@gmail.com</span>
           </a>
           <a href="tel:+21628592003" class="contact-item">
-            <span class="ci-icon">☎</span>
+            <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
             <span>+216 28 592 003</span>
           </a>
-          <a href="https://github.com/MohamedYassineAbid" target="_blank" class="contact-item">
-            <span class="ci-icon">⌥</span>
+          <a href="https://github.com/MohamedYassineAbid" target="_blank" rel="noopener" class="contact-item">
+            <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5a3 3 0 0 0-.9-2.4c3-.3 6-1.5 6-6.6a5 5 0 0 0-1.4-3.6 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.6 1.4a12.4 12.4 0 0 0-6.5 0C6 1.6 4.9 1.9 4.9 1.9a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 3.4 9c0 5.1 3 6.3 6 6.6a3 3 0 0 0-.9 2.4V22"/></svg></span>
             <span>github.com/MohamedYassineAbid</span>
           </a>
-          <a href="https://www.linkedin.com/in/mohamed-yassine-abid/" target="_blank" class="contact-item">
-            <span class="ci-icon">in</span>
+          <a href="https://www.linkedin.com/in/mohamed-yassine-abid/" target="_blank" rel="noopener" class="contact-item">
+            <span class="ci-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></span>
             <span>linkedin.com/in/mohamed-yassine-abid</span>
           </a>
         </div>
       </div>
       <form id="contactForm" class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="text" placeholder="Subject" />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-send">Send Message ↗</button>
+        <label class="field"><span>Name</span><input type="text" name="name" autocomplete="name" placeholder="Your name" required /></label>
+        <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com" required /></label>
+        <label class="field"><span>Subject</span><input type="text" name="subject" placeholder="Internship, collaboration…" /></label>
+        <label class="field"><span>Message</span><textarea name="message" rows="5" placeholder="What would you like to talk about?" required></textarea></label>
+        <button type="submit" class="btn-send">Send message</button>
         <p class="form-note" id="formNote"></p>
       </form>
     </div>
@@ -425,10 +470,10 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <span>© 2026 · Mohamed Yassine Abid</span>
+      <span>© 2026 Mohamed Yassine Abid</span>
       <div class="footer-links">
-        <a href="https://github.com/MohamedYassineAbid" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/mohamed-yassine-abid/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/MohamedYassineAbid" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohamed-yassine-abid/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:abidmohamedyassine00@gmail.com">Email</a>
       </div>
     </div>
@@ -439,7 +484,7 @@
     <div class="terminal-window">
       <div class="terminal-titlebar">
         <div class="terminal-dots">
-          <span class="dot-red" id="termClose" title="Exit terminal"></span>
+          <button type="button" class="dot-red" id="termClose" title="Exit terminal" aria-label="Close terminal"></button>
           <span class="dot-yellow"></span>
           <span class="dot-green"></span>
         </div>
