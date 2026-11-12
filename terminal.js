@@ -142,6 +142,13 @@ const COMMANDS = {
     print(`<span class="ts">EXPERIENCE</span>`);
     gap();
 
+    print(`&nbsp;&nbsp;<span class="ta">▸ KubeOlive: Enterprise MLOps Platform</span>&nbsp;&nbsp;<span class="tm">2026 · OliveSoft</span>`);
+    print(`&nbsp;&nbsp;&nbsp;&nbsp;Self-hosted Charmed Kubeflow on Proxmox: Terraform VMs, Ansible → 3-node MicroK8s,`);
+    print(`&nbsp;&nbsp;&nbsp;&nbsp;Juju deploy with Pipelines, Elyra, Katib, MLflow, KServe.`);
+    print(`&nbsp;&nbsp;&nbsp;&nbsp;Multi-tenant via GitLab + Dex SSO, per-user namespace &amp; MinIO,`);
+    print(`&nbsp;&nbsp;&nbsp;&nbsp;FastAPI admin portal for users &amp; quotas, scripted power-cut recovery.`);
+    gap();
+
     print(`&nbsp;&nbsp;<span class="ta">▸ Data Science Platform</span>&nbsp;&nbsp;<span class="tm">2025 · Univ. of Sfax Research Unit</span>`);
     print(`&nbsp;&nbsp;&nbsp;&nbsp;Self-hosted JupyterHub on K8s (Proxmox/Terraform), automated with Ansible &amp; Helm.`);
     gap();
