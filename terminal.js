@@ -32,7 +32,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && overlay.classList.contains('open')) closeTerminal();
   const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName) || document.activeElement?.isContentEditable;
   if ((e.key === 't' || e.key === 'T') && !typing && !e.metaKey && !e.ctrlKey && !e.altKey &&
-      !overlay.classList.contains('open')) {
+      !overlay.classList.contains('open') && !document.querySelector('dialog[open]')) {
     e.preventDefault();
     toggleBtn.click();
   }

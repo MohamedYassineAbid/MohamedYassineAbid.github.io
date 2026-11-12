@@ -490,3 +490,37 @@ loadPortfolio();
   }
   if (document.fonts) document.fonts.ready.then(() => draw(performance.now()));
 })();
+
+// ---------- CV preview dialog ----------
+(function cvPreview() {
+  const dialog = document.getElementById('cvDialog');
+  const openBtn = document.getElementById('cvPreviewBtn');
+  const closeBtn = document.getElementById('cvClose');
+  const body = document.getElementById('cvBody');
+  const fallback = document.getElementById('cvFallback');
+  if (!dialog || !openBtn || typeof dialog.showModal !== 'function') {
+    // no <dialog> support: open the PDF directly instead
+    openBtn?.addEventListener('click', () => window.open('Mohamed-Yassine-Abid_CV.pdf', '_blank', 'noopener'));
+    return;
+  }
+  const src = 'Mohamed-Yassine-Abid_CV.pdf#view=FitH';
+  // most mobile browsers can't render a PDF inside an iframe
+  const inlinePdf = navigator.pdfViewerEnabled !== false &&
+    !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  openBtn.addEventListener('click', () => {
+    if (inlinePdf && !body.querySelector('iframe')) {
+      const frame = document.createElement('iframe');
+      frame.src = src;
+      frame.title = 'CV preview';
+      body.prepend(frame);
+    }
+    fallback.hidden = inlinePdf;
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+  });
+  closeBtn.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => { document.body.style.overflow = ''; });
+  // click on the backdrop closes it
+  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+})();
