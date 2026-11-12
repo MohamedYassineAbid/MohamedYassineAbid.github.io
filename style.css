@@ -197,21 +197,24 @@ kbd {
 }
 .btn-resume:hover { border-color: var(--hairline-strong); }
 
-/* CV: preview icon + download, joined */
+/* CV: preview button + download icon, joined */
 .cv-group { display: inline-flex; }
-.cv-preview-btn {
+.cv-group .btn-resume {
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: var(--r-md) 0 0 var(--r-md);
+}
+.cv-download-btn {
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
   color: var(--text-2);
   background: var(--raised);
   border: 1px solid var(--hairline);
-  border-right: none;
-  border-radius: var(--r-md) 0 0 var(--r-md);
-  cursor: pointer;
+  border-left: none;
+  border-radius: 0 var(--r-md) var(--r-md) 0;
   transition: color var(--fast) var(--ease), border-color var(--fast) var(--ease);
 }
-.cv-preview-btn:hover { color: var(--text); border-color: var(--hairline-strong); }
-.cv-group .btn-resume { border-radius: 0 var(--r-md) var(--r-md) 0; }
+.cv-download-btn:hover { color: var(--text); border-color: var(--hairline-strong); }
 
 /* CV preview dialog */
 .cv-dialog {
