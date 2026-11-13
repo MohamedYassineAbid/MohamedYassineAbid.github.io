@@ -105,7 +105,7 @@ const COMMANDS = {
       ['Email',    'abidmohamedyassine00@gmail.com'],
       ['Phone',    '+216 28 592 003'],
       ['GitHub',   'github.com/MohamedYassineAbid'],
-      ['LinkedIn', 'linkedin.com/in/mohamed-yassine-abid'],
+      ['LinkedIn', 'linkedin.com/in/abidology'],
       ['Status',   '<span class="ta">Open to Internship</span>'],
     ];
     rows.forEach(([k,v]) =>
@@ -221,7 +221,7 @@ const COMMANDS = {
     print(`&nbsp;&nbsp;<span class="tk">Email   &nbsp;</span>&nbsp;<a href="mailto:abidmohamedyassine00@gmail.com" class="tl">abidmohamedyassine00@gmail.com</a>`);
     print(`&nbsp;&nbsp;<span class="tk">Phone   &nbsp;</span>&nbsp;+216 28 592 003`);
     print(`&nbsp;&nbsp;<span class="tk">GitHub  &nbsp;</span>&nbsp;<a href="https://github.com/MohamedYassineAbid" target="_blank" class="tl">github.com/MohamedYassineAbid</a>`);
-    print(`&nbsp;&nbsp;<span class="tk">LinkedIn&nbsp;</span>&nbsp;<a href="https://linkedin.com/in/mohamed-yassine-abid" target="_blank" class="tl">linkedin.com/in/mohamed-yassine-abid</a>`);
+    print(`&nbsp;&nbsp;<span class="tk">LinkedIn&nbsp;</span>&nbsp;<a href="https://linkedin.com/in/abidology" target="_blank" class="tl">linkedin.com/in/abidology</a>`);
     gap();
   },
 
